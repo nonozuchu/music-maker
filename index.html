@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>MUSIC MAKER MACHNE!</h1>
+        <button id="play_audio" type="button"> Play audio</button>
+        <button id="stop_audio" type="button"> Stop audio</button>
+        <button id="reset_audio" type="button"> Reset audio</button>
+      </div>
+      <input type="number" id="bpm_input" placeholder="BPM" value="120" required>
+      <button id="submit_bpm">SET BPM</button>
+      <textarea id="coding_area" class="input_text" rows="4" cols="50"></textarea>
+      <button id="submit_code">SET CODE</button>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/inputHandler.js"></script>
+  </body>
+</html>

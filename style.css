@@ -1,0 +1,5 @@
+.input_text {
+    width: 90vw;
+    height: 70vh;
+    box-sizing: border-box; /* This ensures that padding and border are included in the total width */
+  }
