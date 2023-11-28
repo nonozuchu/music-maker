@@ -1,4 +1,4 @@
-import { runTimer } from './timer';
+import { runTimer } from './timer.js';
 
 
 //document.querySelector('#app').innerHTML = `code goes here`
