@@ -1,4 +1,4 @@
-import { updateFakeValues,playTree } from "./musicStructure";
+import { updateFakeValues,playTree } from "./musicStructure.js";
 
 const miliseconds_in_minute = 60000;
 let bpm = 120;

@@ -1,5 +1,5 @@
-import { playAudio } from "./audio";
-import { full_beat_ms } from "./timer";
+import { playAudio } from "./audio.js";
+import { full_beat_ms } from "./timer.js";
 
 let f_ms_current = 0;
 let f_full_beat_ms = 0;

@@ -1,4 +1,4 @@
-import { setupAudio, stopAudio } from './audio.js'
+import { setupAudio, stopAudio } from "./audio.js"
 import { controlTextArea, submitTextArea } from './controlTextArea.js';
 import { resetTimer, setBPM } from './timer.js'
 

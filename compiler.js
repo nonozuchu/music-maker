@@ -1,5 +1,5 @@
-import {every, from_to, wait, play} from "./musicStructure";
-import { audioNames} from "./audio"
+import {every, from_to, wait, play} from "./musicStructure.js";
+import { audioNames} from "./audio.js"
 const functions = {
     "every": every,
     "from_to": from_to,

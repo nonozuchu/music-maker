@@ -1,5 +1,5 @@
-import { initCompiling } from "./betterCompiler";
-import { resetTimer } from "./timer";
+import { initCompiling } from "./betterCompiler.js";
+import { resetTimer } from "./timer.js";
 export function controlTextArea()
 {
 var inputField = document.getElementById('coding_area'); // get textarea object

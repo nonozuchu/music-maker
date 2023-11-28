@@ -1,5 +1,5 @@
-import { audioNames } from "./audio";
-import { constructObject } from "./musicStructure";
+import { audioNames } from "./audio.js";
+import { constructObject } from "./musicStructure.js";
 
 export function initCompiling(text)
 {

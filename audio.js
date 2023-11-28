@@ -1,5 +1,5 @@
-import { startTimer, stopTimer, resetTimer } from "./timer"
-import { initCompiling } from "./betterCompiler";
+import { startTimer, stopTimer, resetTimer } from "./timer.js";
+import { initCompiling } from "./betterCompiler.js";
 
 export function setupAudio(element) {
   console.log("setupAudio() in audio.js");
