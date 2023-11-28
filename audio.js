@@ -1,24 +1,45 @@
 import { startTimer, stopTimer, resetTimer } from "./timer"
+import { initCompiling } from "./betterCompiler";
 
 export function setupAudio(element) {
   console.log("setupAudio() in audio.js");
-  element.addEventListener('click', () => startTimer())
+  function handleClick()
+  {
+    var inputField = document.getElementById('coding_area').value;
+        
+    initCompiling(inputField)
+    resetTimer();
+    startTimer();
+  }
+  element.addEventListener('click', handleClick)
 }
 
 export function stopAudio(element) {
   console.log("setupAudio() in audio.js");
-  element.addEventListener('click', () => stopTimer())
+  function handleClick()
+  {
+    resetTimer();
+    stopTimer();
+  }
+  element.addEventListener('click', handleClick)
+
 }
 export function resetAudio(element) {
   console.log("setupAudio() in audio.js");
-  element.addEventListener('click', () => resetTimer())
+  
 }
 
 export var audioNames = {
-  "CYMBAL": "./samples/Drum Hits/D_B Cymbal 14.wav",
-  "HAT": "./samples/Drum Hits/D_B Hat 02.wav",
-  "KICK": "./samples/Drum Hits/D_B Kick 15.wav",
-  "FX": "./samples/FX/FX 06.wav"
+  "cymbal": "./samples/Drum Hits/D_B Cymbal 14.wav",
+  "hat": "./samples/Drum Hits/D_B Hat 03.wav",
+  "kick": "./samples/Drum Hits/D_B Kick 15.wav",
+  "fx": "./samples/FX/FX 11.wav",
+  "fx2": "./samples/FX/FX 19.wav",
+  "fx3": "./samples/FX/Stab 01 (C).wav",
+  "perc": "./samples/Drum Hits/D_B Perc 13.wav",
+  "snare": "./samples/Drum Hits/D_B Snare 01.wav",
+  "tamb": "./samples/Drum Hits/D_B Tamb 02.wav",
+  "subkick": "./samples/Drum Hits/Sub Kick 01.wav"
 }
 export function playAudio(audioName)
 {

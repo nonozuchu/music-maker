@@ -1,4 +1,5 @@
 import { initCompiling } from "./betterCompiler";
+import { resetTimer } from "./timer";
 export function controlTextArea()
 {
 var inputField = document.getElementById('coding_area'); // get textarea object
@@ -29,10 +30,10 @@ var inputField = document.getElementById('coding_area'); // get textarea object
 export function submitTextArea(buttonElement)
 {
     buttonElement.addEventListener('click', function() {
-        var inputField = document.getElementById('coding_area').value;
+        
         //var lines = inputField.value.split('\n');
+        resetTimer();
+        var inputField = document.getElementById('coding_area').value;
         initCompiling(inputField)
-        
-        
     });
 };

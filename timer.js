@@ -1,11 +1,11 @@
-import { every,from_to,play,updateFakeValues,wait } from "./musicStructure";
+import { updateFakeValues,playTree } from "./musicStructure";
 
 const miliseconds_in_minute = 60000;
 let bpm = 120;
 var total_beats = 0;
 
 export var full_beat_ms = (miliseconds_in_minute/bpm);//how many ms in a full beat
-const beat_divider = 20;
+const beat_divider = 40;
 let subdivided_beat = full_beat_ms/beat_divider;
 
 
@@ -42,23 +42,7 @@ export function runTimer()
                 console.log(ms_current);
                 updateFakeValues(ms_current,full_beat_ms,current_beat_counter);
 
-                //wait(10, [play], ["CYMBAL"]);
-                //every(0.25, [play], [["KICK"]]);
-                //from_to(0,10,[every],[[1 ,[play],[["CYMBAL"]]]]);
-                //every(5, [play, wait],[  ["KICK"],[ 1, [play],[["CYMBAL"]] ]  ]);
-                every(1,
-                    [play, wait],
-                         [["HAT"],
-                 [0.25,[play,wait],[
-                            ["KICK"],
-                            [0.25,[play,wait], 
-                            [["CYMBAL"],
-                        [0.25,[play,wait],
-                            [["CYMBAL"],
-                        [0.25,[play],["CYMBAL"]]]]]]
-                         ]
-                        ]]);
-                //fx kick chimbal chimbal
+                playTree(0);
             }
         }, subdivided_beat
     );

@@ -8,30 +8,9 @@ const functions = {
 }
 
 
-function FunctionObject(symbol, parameter1, parameter2, parent_id, id, child_funcs_Ids) {
 
-    this.func = symbol;
 
-    this.parameter1 = parameter1;
-    this.parameter2 = parameter2;
-    
-    this.parent_id = parent_id;
-    this.id = id;
-    this.child_funcs_Ids = child_funcs_Ids;
-}
 
-function CreateFunctionObject(symbol, parameter1, parameter2, parent_id, id, child_funcs_Ids)
-{
-    var object = new FunctionObject;
-    for( let i = 0; i < br_funcs.length; i++)
-    {
-        if (symbol == br_funcs[i])
-        {
-
-        }
-    }
-
-}
 
 const parenthesis = ["(", ")"] ;
 const brackets = ["{", "}" ];

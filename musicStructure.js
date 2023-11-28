@@ -11,27 +11,47 @@ export function updateFakeValues(true_ms_current, true_full_beat_ms, true_beat_c
     f_full_beat_ms = true_full_beat_ms;
     f_beat_counter = true_beat_counter;
 }
-
-export function constructMusicPlayer()
+var objects;
+export function constructObject( objectsList)
 {
-
+    objects = objectsList;
 }
-export function playMusic()
+export function playTree(parent_id)
 {
+    
+    for(let j = 0; j < objects.length; j++)// go through all items -- parent id = 0  / x0x / 1 / 2
+    {
+        
+        //console.log(parent_id);
 
+        if(objects[j].parent_id === parent_id)//find every object that has the parent_id --- object.parent id === 0 / 0 / x1x / 2 /
+        {
+            console.table(objects[j]);
+            let object = objects[j];
+            switch(object.func){
+                case("every"):
+                every(object.parameter1,object.id);
+                break;
+                case("wait"):
+                wait(object.parameter1, object.id);
+                break;
+                case ("from_to"):
+                from_to(object.parameter1,object.parameter2, object.id);
+                break;
+                case("play"):
+                play(object.parameter1, object.id);
+                break;
+                default:
+                    console.error("unknown function in playTree");
+            }
+        }
+    }
 }
-
-export async function every(beat_multiplier,functions,parameters)
+export async function every(beat_multiplier,id)
 {
     if ((f_ms_current) % (f_full_beat_ms * beat_multiplier) == 0)
     {
-        functions.forEach(function (func, index)
-        {
-            //parameters = parameters.flat(1);
-            //console.log("func:  " + func +"\n");
-            //console.log("parameters[index]  " + parameters[index]+ "\n");
-            func(...parameters[index]);
-        });
+        playTree(id);
     }
 
 }
@@ -40,21 +60,12 @@ export async function every(beat_multiplier,functions,parameters)
 //[
 //     [  0,100,[every],[0.2],  ],
 // [0.5,[play],['2.wav']  ]);
-export function from_to(from, to, functions, parameters )
+export function from_to(from, to, id )
 {
-    //console.log("fake beat counter: " + f_beat_counter);
-    //console.log("from: " + from + "\nto:  " +to);
-    //console.log("typeof(from): " + typeof(from) + "\ntypef(to):  " +typeof(to));
     if(f_beat_counter >= from && f_beat_counter <= to)
     {
         console.log("PASSED!");
-        functions.forEach(function (func, index)
-        {
-            //parameters = parameters.flat(1);
-            //console.log("func:  " + func +"\n");
-            //console.log("parameters[index].flat(1)  " + parameters[index].flat(1)+ "\n");
-            func(...parameters[index]);
-        });
+        playTree(id);
     }
     else
     {
@@ -62,17 +73,15 @@ export function from_to(from, to, functions, parameters )
     }
 }
 
-export function wait(beat_multiplier, functions, parameters) {
-    //if (!Array.isArray(functions) || !Array.isArray(parameters) || functions.length !== parameters.length) {
-    //  throw new Error('Invalid input: functions and parameters must be arrays of the same length');
-    //}
-    console.log("beat_multiplier, functions, parameters\n" + beat_multiplier+ functions + parameters);
-    setTimeout(() => {
-        functions.forEach(function (func, index)
-        {
-            func(...parameters[index]);
-        });
+export function wait(beat_multiplier,id) {
+    console.log("wait called:")
+    console.log({beat_multiplier, full_beat_ms})
+    let a = setTimeout(() => {
+        console.log("hello there, setTimeout working!")
+        playTree(id);
+        clearTimeout(a);
     }, beat_multiplier * f_full_beat_ms); // Convert seconds to milliseconds
+    
 }
 
 export async function play(audio)
