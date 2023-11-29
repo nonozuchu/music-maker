@@ -5,7 +5,7 @@
     /*box-sizing: border-box;  This ensures that padding and border are included in the total width */
 }
 .signature{
-  color: tomato;
+  color: tomato; 
   padding-left: 5%;
 }
 .textarea_container{
@@ -40,7 +40,7 @@ i{
       "input_text"
       ;
   grid-template-rows: 3% 10% 10% 77%;
-  background-color: whitesmoke;
+  background-color: whitesmoke; 
 }
 .title_container{
   display: flex;

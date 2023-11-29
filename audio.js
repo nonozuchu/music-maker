@@ -29,6 +29,7 @@ export function resetAudio(element) {
   
 }
 
+
 export var audioNames = {
   "cymbal": "./samples/Drum Hits/D_B Cymbal 14.wav",
   "hat": "./samples/Drum Hits/D_B Hat 03.wav",
