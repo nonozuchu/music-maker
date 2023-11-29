@@ -1,7 +1,7 @@
 import { updateFakeValues,playTree } from "./musicStructure.js";
 
 const miliseconds_in_minute = 60000;
-let bpm = 120;
+let bpm = 60;
 var total_beats = 0;
 
 export var full_beat_ms = (miliseconds_in_minute/bpm);//how many ms in a full beat
