@@ -10,13 +10,13 @@ Being frustrated by live code music editors such as tydal cycles, I wanted to cr
 #### Hystory of development
 First things first, I watched a tutorial on react. Although the project didn't continue with this framework, it gave me some basis on using Flask.
 Having set up a JS/CSS/HTML workspace with flask, vscode and GitHub, I started work.
-<p>
+
 #### Some quickly resolved problems:
 How to have an text input from user that doesn't disapear? text area + normal button
 How to control time? have a timer file (timer js) that controls bpm and intervals and quickstarts the playing with playtree(0)
 How to handle interactions with the page? inputHandler.js -- controls all the bmp, stopping and playing timer as well as submiting the code
 How to quickstart the whole js files? main.js -- gets called by index.html and calls everything up, also setting a default value for text area
-How to ensure propper functioning of text area? controlTextArea.js - not allow normal functioning when tab is pressed, switch to \t</p>
+How to ensure propper functioning of text area? controlTextArea.js - not allow normal functioning when tab is pressed, switch to \t
 
 #### Now a difficult question:
 How to interpret the user's input into actual, costumized code?
