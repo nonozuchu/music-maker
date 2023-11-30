@@ -40,7 +40,10 @@ export var audioNames = {
   "perc": "./samples/Drum Hits/D_B Perc 13.wav",
   "snare": "./samples/Drum Hits/D_B Snare 01.wav",
   "tamb": "./samples/Drum Hits/D_B Tamb 02.wav",
-  "subkick": "./samples/Drum Hits/Sub Kick 01.wav"
+  "subkick": "./samples/Drum Hits/Sub Kick 01.wav",
+  "longS": "./samples/plus/longS.mp3",
+  "1S": "./samples/plus/1s.mp3",
+  "2S": "./samples/plus/2s.mp3"
 }
 export function playAudio(audioName)
 {
