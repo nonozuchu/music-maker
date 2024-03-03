@@ -1,4 +1,4 @@
-import { startTimer, stopTimer, resetTimer } from "./timer.js";
+import { startTimer, stopTimer, resetTimer, resetBeats } from "./timer.js";
 import { initCompiling } from "./betterCompiler.js";
 
 export function setupAudio(element) {
@@ -8,7 +8,7 @@ export function setupAudio(element) {
     var inputField = document.getElementById('coding_area').value;
         
     initCompiling(inputField)
-    resetTimer();
+  
     startTimer();
   }
   element.addEventListener('click', handleClick)
@@ -18,14 +18,18 @@ export function stopAudio(element) {
   console.log("setupAudio() in audio.js");
   function handleClick()
   {
-    resetTimer();
     stopTimer();
   }
   element.addEventListener('click', handleClick)
 
 }
 export function resetAudio(element) {
-  console.log("setupAudio() in audio.js");
+  console.log("resetAudio() in audio.js");
+  function handleClick()
+  {
+    resetBeats();
+  }
+  element.addEventListener('click', handleClick)
   
 }
 

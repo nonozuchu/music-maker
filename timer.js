@@ -61,9 +61,14 @@ export function resetTimer()
     clearInterval(intervalID);
     playing = false;
     newInterval = true;
+    resetBeats();
+    runTimer();
+}
+export function resetBeats()
+{
+    console.log("helloo");
     semi_beats_counter = 0;
     current_beat_counter = 0;
-    runTimer()
 }
 
 
@@ -72,11 +77,16 @@ function convertToMillisecond(seconds)
 {
     return seconds * 1000;
 }
+
+
 export function incrementCounters()
 {
     semi_beats_counter++;
     if(ms_current % full_beat_ms == 0)
     {
         current_beat_counter++;
+        
+        
     }
+    document.getElementById("current_beat").innerHTML = current_beat_counter + "." + semi_beats_counter;
 }

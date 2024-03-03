@@ -1,11 +1,14 @@
-import { setupAudio, stopAudio } from "./audio.js"
+import { setupAudio, stopAudio, resetAudio } from "./audio.js"
 import { controlTextArea, submitTextArea } from './controlTextArea.js';
-import { resetTimer, setBPM } from './timer.js'
+import { resetBeats, resetTimer, setBPM } from './timer.js'
 
 document.addEventListener('DOMContentLoaded', function() {
 
 setupAudio(document.querySelector('#play_audio'));
 stopAudio(document.querySelector('#stop_audio'));
+
+resetAudio(document.querySelector('#reset_audio'));
+
 configureSetBPM(document.querySelector('#submit_bpm'));
 controlTextArea();
 submitTextArea(document.querySelector('#submit_code'));

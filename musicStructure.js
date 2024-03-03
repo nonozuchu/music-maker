@@ -26,7 +26,7 @@ export function playTree(parent_id)
 
         if(objects[j].parent_id === parent_id)//find every object that has the parent_id --- object.parent id === 0 / 0 / x1x / 2 /
         {
-            console.table(objects[j]);
+            //console.table(objects[j]);
             let object = objects[j];
             switch(object.func){
                 case("every"):
@@ -75,7 +75,7 @@ export function from_to(from, to, id )
 
 export function wait(beat_multiplier,id) {
     console.log("wait called:")
-    console.log({beat_multiplier, full_beat_ms})
+    //console.log({beat_multiplier, full_beat_ms})
     let a = setTimeout(() => {
         console.log("hello there, setTimeout working!")
         playTree(id);

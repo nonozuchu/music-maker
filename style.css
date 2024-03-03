@@ -65,7 +65,7 @@ i{
 .control_button_container{
   width: 60%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   justify-content: space-evenly
 }
 .icon{

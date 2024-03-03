@@ -16,4 +16,8 @@ var defaultText = "//Welcome to MUSIC MAKER MACHINE!\n//\n//Through a combinatio
 //}
 
 document.getElementById('coding_area').value = defaultText;
+
+
+
+
 runTimer();
